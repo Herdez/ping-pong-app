@@ -9,13 +9,14 @@ class RoundsController < ApplicationController
     #new game created
   	game = Game.create
     #looking id opponent by email
-    opponent = User.find_by(email: opponent)
+    p "*" * 50
+    p opponent_user = User.find_by(email: opponent)
     #new rounds created
   	round1 = Round.create(user_id: current_user.id, game_id: game.id, score: your_score, date: date_played)
-  	round2 = Round.create(user_id: opponent.id, game_id: game.id, score: their_score, date: date_played, status: true)
+  	round2 = Round.create(user_id: opponent_user.id, game_id: game.id, score: their_score, date: date_played, status: true)
     #board updated
     board1 = Board.find_by(name: current_user.email)
-    board2 = Board.find_by(name: opponent.email)
+    board2 = Board.find_by(name: opponent_user.email)
     if board1 
       board1.score += your_score.to_i
       board1.games += 1

@@ -10,8 +10,9 @@
   <p> Date Played </p>
   <%= form.text_field :date %>
   <br>
-  <p> Opponent </p>
-  <%= form.collection_select :opponent, User.order(:email),:id,:email, include_blank: true %>
+  <p> Opponent Email </p>
+  <%= form.text_field :opponent %>
+  <br>
   <br>
   <p> Your Scores </p>
   <%= form.text_field :your_score %>
