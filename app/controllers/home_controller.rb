@@ -6,5 +6,6 @@ class HomeController < ApplicationController
   end
 
   def log
+  	@round = Round.new
   end
 end
