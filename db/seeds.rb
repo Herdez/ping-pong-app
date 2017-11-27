@@ -1,12 +1,12 @@
-board1_user1 = Board.create(name: "inigo", score: 52, games: 2)
-board2_user2 = Board.create(name: "edrizio", score: 13, games: 2)
-board3_user3 = Board.create(name: "herdez", score: 21, games: 1)
+board1_user1 = Board.create(name: "inigo@regalii.com", score: 52, games: 2)
+board2_user2 = Board.create(name: "edrizio@regalii.com", score: 13, games: 2)
+board3_user3 = Board.create(name: "herdez@gmail.com", score: 21, games: 1)
 
 puts "-- Added 3 boards to your database"
 
-user1 = User.create!(email: "inigo@regalii.com", password: 'secret123', board_id: board1_user1.id)
-user2 = User.create!(email: "edrizio@regalii.com", password: 'secret123', board_id: board2_user2.id)
-user3 = User.create!(email: "herdez@gmail.com", password: 'herdezherdez', board_id: board3_user3.id)
+user1 = User.create!(email: "inigo@regalii.com", password: 'secret123', board_id: board1_user1.id, name: "inigo")
+user2 = User.create!(email: "edrizio@regalii.com", password: 'secret123', board_id: board2_user2.id, name: "edrizio")
+user3 = User.create!(email: "herdez@gmail.com", password: 'herdezherdez', board_id: board3_user3.id, name: "herdez")
 
 
 puts "-- Added 2 users to your database"

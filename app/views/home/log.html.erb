@@ -2,3 +2,23 @@
 
 <div class="alert alert-warning" role="alert">Log Your Game.</div>
 
+<h3>New Round</h3>
+<%= form_for :log, url: "log/rounds" do |form| %>
+  <p> My nick_name </p>
+  <%= form.text_field :name %>
+  <br>
+  <p> Date Played </p>
+  <%= form.text_field :date %>
+  <br>
+  <p> Opponent </p>
+  <%= form.collection_select :opponent, User.order(:email),:id,:email, include_blank: true %>
+  <br>
+  <p> Your Scores </p>
+  <%= form.text_field :your_score %>
+  <br>
+  <p> Their Score </p>
+  <%= form.text_field :their_score %>
+  <br>
+  <br>
+  <%= form.submit  %>
+<% end  %>
